@@ -53,6 +53,17 @@ function deleteSheetsHasExceptNameList(exceptSheetNameList) {
   })
 }
 
+function deleteSheetsInclude(includeWord) {
+  var sheetNameList = getSheetNameList()
+  sheetNameList.forEach( n => {
+
+    if (n.includes(includeWord)) {
+      console.log(n,includeWord)
+      deleteSheetByName(n)
+    }
+  })
+}
+
 function updateSheetName(currentSheetName, newSheetName) {
   var sheet = getSheetByName(currentSheetName)
   sheet.setName(newSheetName)
