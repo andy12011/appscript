@@ -180,4 +180,9 @@ function setFrozen(sheetName, column, row) {
     }
 }
 
+function updateStatus(sheetName, range, str) {
+  let sheet = getSheetByName(sheetName)
+  sheet.getRange(range).setValue(str)
+}
+
 
