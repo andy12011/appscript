@@ -185,4 +185,20 @@ function updateStatus(sheetName, range, str) {
   sheet.getRange(range).setValue(str)
 }
 
+function deleteSheetColumns(sheetName, start, end) {
+    if (end == 0) {
+    return 
+  }
+  var sheet = getSheetByName(sheetName)
+  sheet.deleteColumns(start, end);
+}
+
+function deleteSheetRows(sheetName, start, end) {
+  if (end == 0) {
+    return 
+  }
+  var sheet = getSheetByName(sheetName)
+  sheet.deleteRows(start, end);
+}
+
 
